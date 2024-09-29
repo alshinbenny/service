@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Service Page</title>
+    <style>
+        /* Add your existing styles here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 36px;
+        }
+
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: #fff;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card h3 {
+            margin: 15px;
+            font-size: 24px;
+        }
+
+        .service-card p {
+            margin: 15px;
+            font-size: 16px;
+        }
+
+        .service-card .btn {
+            display: block;
+            margin: 15px;
+            padding: 10px 20px;
+            background-color: #1e88e5;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .service-card .btn:hover {
+            background-color: #ff4500;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card:hover img {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .service-card {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .services-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Our Services</h1>
+    <div class="services-container">
+        <div class="service-card">
+            <img src="static/images/mec.jpeg" alt="Cleaning Service">
+            <h3>Mechanic Service</h3>
+            <p>Book top-rated cleaning services in your area.</p>
+            <a href="cleaning-service.html" class="btn">Learn More</a>
+        </div>
+        <div class="service-card">
+            <img src="static/images/plumber.jpg" alt="Plumbing Service">
+            <h3>Plumbing Service</h3>
+            <p>Get expert plumbing services at affordable rates.</p>
+            <a href="plumbing-service.html" class="btn">Learn More</a>
+        </div>
+        <div class="service-card">
+            <img src="static/images/hvac.jpeg" alt="Electrical Service">
+            <h3>HVAC Service</h3>
+            <p>Hire certified electricians for your needs.</p>
+            <a href="electrical-service.html" class="btn">Learn More</a>
+        </div>
+        <div class="service-card">
+            <img src="static/images/pain.jpg" alt="Gardening Service">
+            <h3>painting Service</h3>
+            <p>Professional gardening services at your doorstep.</p>
+            <a href="gardening-service.html" class="btn">Learn More</a>
+        </div>
+        <div class="service-card">
+            <img src="static/images/electric.jpg" alt="Carpentry Service">
+            <h3>Electric Service</h3>
+            <p>Skilled carpenters for all your woodworking needs.</p>
+            <a href="plums" class="btn">Learn More</a>
+        </div>
+    </div>
+</body>
+</html>

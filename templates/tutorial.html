@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Tutorials</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            animation: fadeIn 1s ease-in;
+        }
+
+        header {
+            background-color: #1e90ff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            animation: slideDown 1s ease-out;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .intro-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .intro-section h2 {
+            font-size: 32px;
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+
+        .intro-section p {
+            font-size: 18px;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            animation: slideUp 1.5s ease-in;
+        }
+
+        .tutorial-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .tutorial-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0;
+            animation: fadeInCard 1s forwards;
+            animation-delay: calc(0.2s * var(--animation-order));
+        }
+
+        .tutorial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .tutorial-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .tutorial-card p {
+            color: #777;
+            font-size: 16px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .tutorial-card a {
+            text-decoration: none;
+            color: #1e90ff;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+            transition: color 0.3s;
+        }
+
+        .tutorial-card a:hover {
+            color: #357ABD;
+        }
+
+        footer {
+            background-color: #1e90ff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            animation: slideUp 1s ease-out;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInCard {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .tutorial-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tutorial-card {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>User Tutorials</h1>
+</header>
+
+<div class="container">
+    <section class="intro-section">
+        <h2>Information about mechanic videos</h2>
+        <p>Explore our collection of tutorials designed to help you master new skills and enhance your knowledge. Whether you're just starting out or looking to advance your expertise, you'll find valuable resources here.</p>
+    </section>
+
+    <section class="tutorial-container">
+        <div class="tutorial-card" style="--animation-order: 1;">
+            <h3>Information about painting videos</h3>
+            <p>Learn the basics of HTML, the foundational language of the web. This tutorial covers all the essential elements you need to get started.</p>
+            <a href="#">View Tutorial</a>
+        </div>
+        <div class="tutorial-card" style="--animation-order: 2;">
+            <h3>Information about electric videos</h3>
+            <p>Discover how to use CSS Grid to create responsive and flexible layouts with ease. This tutorial includes practical examples and tips.</p>
+            <a href="#">View Tutorial</a>
+        </div>
+        <div class="tutorial-card" style="--animation-order: 3;">
+            <h3>information about HVAC videos</h3>
+            <p>Dive into JavaScript with this essential guide. Learn how to add interactivity and dynamic features to your websites.</p>
+            <a href="#">View Tutorial</a>
+        </div>
+        <div class="tutorial-card" style="--animation-order: 4;">
+            <h3>information about cleaning videos</h3>
+            <p>Understand the principles of responsive design and learn how to create websites that look great on any device.</p>
+            <a href="#">View Tutorial</a>
+        </div>
+        <div class="tutorial-card" style="--animation-order: 5;">
+            <h3>information about plumbing videos</h3>
+            <p>Learn how to make your websites accessible to all users, including those with disabilities, by following best practices.</p>
+            <a href="#">View Tutorial</a>
+        </div>
+        <div class="tutorial-card" style="--animation-order: 6;">
+            <h3>information about mechanic videos</h3>
+            <p>Take your JavaScript skills to the next level with this tutorial on advanced techniques and patterns.</p>
+            <a href="https://youtu.be/mYmNM8-XRP0">View Tutorial</a>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 Your Company. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

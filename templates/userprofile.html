@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Section - M.watch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-image: url(bag1.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 1px 20px;
+            color: white;
+            position: relative;
+        }
+
+        .navbar .logo a {
+            color: #6a11cf;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .navbar .nav-links a {
+            color: #145c97;
+            text-decoration: none;
+            padding: 8px 15px;
+            font-size: 16px;
+        }
+
+        .navbar .nav-links a:hover {
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+
+        .navbar .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .search-bar1 input {
+            border: none;
+            padding: 4px;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-right: 5px;
+        }
+
+        .navbar .search-bar input {
+            border: none;
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-right: 5px;
+        }
+
+        .navbar .search-bar button {
+            background-color: #145c97;
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .navbar .search-bar1 button {
+            background-color: #09d6e5;
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 10px;
+        }
+
+        .navbar .search-bar button:hover {
+            background-color: #145c97;
+        }
+
+        .navbar .genre-select {
+            background: #ffffff;
+            color: #145c97;
+            border: none;
+            padding: 16px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .navbar .genre-select1 {
+            background: white;
+            color: #145c97;
+            border: none;
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        .navbar .icon {
+            font-size: 18px;
+            margin-right: 8px;
+        }
+
+        .navbar .icon1 {
+            font-size: 8px;
+            margin-right: 8px;
+        }
+
+        .navbar .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            z-index: 1000;
+        }
+
+        .navbar .dropdown-menu a {
+            color: #145c97;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .navbar .dropdown-menu a:hover {
+            background-color: #ffffff;
+        }
+
+        .navbar .dropdown-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            padding: 10px;
+            color: #145c97;
+        }
+
+        @media (max-width: 800px) {
+            .navbar .nav-links {
+                display: none;
+            }
+
+            .navbar .dropdown-toggle {
+                display: block;
+            }
+
+            .navbar .dropdown-menu {
+                display: block;
+                width: 100%;
+                top: 60px;
+                right: 0;
+            }
+
+            .navbar .dropdown-menu a {
+                padding: 15px;
+            }
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+
+        .profile-header img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .profile-header h1 {
+            margin: 10px 0;
+            font-size: 24px;
+        }
+
+        .profile-header p {
+            color: #777;
+            font-size: 16px;
+        }
+
+        .section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .section p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .button {
+            background-color: #145c97;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background-color: #145c97;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .footer {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        @media (max-width: 800px) {
+            .navbar .nav-links {
+                display: none;
+            }
+
+            .navbar .dropdown-toggle {
+                display: block;
+                cursor: pointer;
+                font-size: 24px;
+                padding: 10px;
+            }
+
+            .navbar .dropdown-menu {
+                display: block;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background-color: #333;
+                border-radius: 5px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                padding: 10px;
+                z-index: 1000;
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="homepage.html"></a>
+        </div>
+        <div class="dropdown-toggle" onclick="toggleDropdown()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav class="nav-links">
+<!--            <select class="genre-select" onchange="location = this.value;">-->
+<!--                <option value="#">movie</option>-->
+<!--                <option value="#">English</option>-->
+<!--                <option value="#">Malayalam</option>-->
+<!--                <option value="#">Tamil</option>-->
+<!--                <option value="#">Telugu</option>-->
+<!--                <option value="#">Kannad</option>-->
+            </select>
+            <a href="profile.html"><i class="fas fa-user icon"></i>Profile</a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+        <div class="dropdown-menu">
+            <select class="genre-select1" onchange="location = this.value;">
+                <option value="#"></option>
+                <option value="#">English</option>
+                <option value="#">Malayalam</option>
+                <option value="#">Tamil</option>
+                <option value="#">Telugu</option>
+                <option value="#">Kannad</option>
+            </select>
+            <a href="mylist.html"><i class="fas fa-list icon1"></i></a>
+            <a href="profile.html"><i class="fas fa-user icon1"></i>Profile</a>
+            <div class="search-bar1">
+                <input type="text" placeholder="Search...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="profile-header">
+            <img src="static/images/ac.jpg" alt="Profile Picture">
+            <h1>alshin</h1>
+            <p>Email: alshin@gmail.com</p>
+            <p>Member Since: January 2024</p>
+        </div>
+
+        <div class="section">
+            <h2>Account Details</h2>
+            <div class="input-group">
+                <label for="email">Change Email</label>
+                <input type="email" id="email" placeholder="Enter new email">
+            </div>
+            <div class="input-group">
+                <label for="phone">Change Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter new phone number">
+            </div>
+            <div class="input-group">
+                <label for="password">Change Password</label>
+                <input type="password" id="password" placeholder="Enter new password">
+            </div>
+            <a href="#" class="button">Save Changes</a>
+        </div>
+
+
+    </div>
+
+    <footer class="footer">
+        &copy; M.watch...
+    </footer>
+
+    <script>
+        function toggleDropdown() {
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

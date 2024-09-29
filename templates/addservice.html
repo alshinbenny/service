@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Service</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #34495e;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        header nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            margin: 20px auto;
+            flex-grow: 1;
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+            color: #34495e;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            color: white;
+            background-color: #27ae60;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #219150;
+        }
+
+        footer {
+            background-color: #34495e;
+            color: white;
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        footer .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        footer .footer-content div {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #27ae60;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #219150;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Your Company</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Add New Service</h2>
+    <form>
+        <div class="form-group">
+            <label for="serviceName">Service Name</label>
+            <input type="text" id="serviceName" name="serviceName" placeholder="Enter the service name" required>
+        </div>
+        <div class="form-group">
+            <label for="serviceDescription" class="description-label">Service Description</label>
+            <textarea id="serviceDescription" name="serviceDescription" placeholder="Enter the service description" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="servicePrice">Price</label>
+            <input type="number" id="servicePrice" name="servicePrice" placeholder="Enter the service price" required>
+        </div>
+        <div class="form-group">
+            <label for="serviceCategory">Category</label>
+            <select id="serviceCategory" name="serviceCategory" required>
+                <option value="" disabled selected>Select a category</option>
+                <option value="consulting">Consulting</option>
+                <option value="repair">Repair</option>
+                <option value="installation">Installation</option>
+                <option value="training">Training</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <button type="submit" class="btn">Add Service</button>
+    </form>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <div>&copy; 2024 Your Company. All rights reserved.</div>
+        <div><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></div>
+    </div>
+</footer>
+
+</body>
+</html>

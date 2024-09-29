@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #1e88e5; /* Changed background color */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        header:hover {
+            background-color: #357ABD;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .contact-form, .contact-info {
+            flex: 1;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .contact-form:hover, .contact-info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .contact-form h2, .contact-info h2 {
+            margin-top: 0;
+            font-size: 28px;
+            color: #333;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        .contact-form textarea {
+            resize: vertical;
+            height: 150px;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+        .contact-form input[type="submit"] {
+            background-color: #1e88e5; /* Changed background color */
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .contact-form input[type="submit"]:hover {
+            background-color: #357ABD;
+            transform: translateY(-3px);
+        }
+        .contact-info p {
+            margin: 10px 0;
+            color: #555;
+        }
+        .contact-info .address, .contact-info .phone, .contact-info .email {
+            margin-bottom: 15px;
+        }
+        .map {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+        }
+        footer {
+            background-color: #1e88e5; /* Changed background color */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            transition: background-color 0.3s ease;
+        }
+        footer:hover {
+            background-color: #357ABD;
+        }
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            .contact-form h2, .contact-info h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Contact Us</h1>
+</header>
+
+<div class="container">
+    <section class="contact-section">
+        <div class="contact-form">
+            <h2>Get in Touch</h2>
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <input type="submit" value="Send Message">
+            </form>
+        </div>
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <div class="address">
+                <p><strong>Address:</strong> 123 Main Street, Anytown, USA</p>
+            </div>
+            <div class="phone">
+                <p><strong>Phone:</strong> (123) 456-7890</p>
+            </div>
+            <div class="email">
+                <p><strong>Email:</strong> contact@yourcompany.com</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.9652810457586!2d-122.08227968469031!3d37.38748967984256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb7a43b1bb2db%3A0x6e22d590ba4d1d65!2sGoogleplex!5e0!3m2!1sen!2sus!4v1634607737011!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Your Company. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

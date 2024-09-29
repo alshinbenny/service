@@ -1,0 +1,41 @@
+from django.shortcuts import render
+
+# Create your views here.
+def login(request):
+    return render(request,'login.html')
+def home(request):
+    return render(request,'home.html')
+def register(request):
+    return render(request,'register.html')
+def about(request):
+    return render(request,'about.html')
+def cpassword(request):
+    return render(request,'cpassword.html')
+def contact(request):
+    return render(request,'contact.html')
+def serviceengineers(request):
+    return render(request,'serviceengineers.html')
+def tutorial(request):
+    return render(request,'tutorial.html')
+def payment(request):
+    return render(request,'payment.html')
+def user(request):
+    return render(request,'user.html')
+def addservice(request):
+    return render(request,'addservice.html')
+def booking(request):
+    return render(request,'booking.html')
+def service(request):
+    return render(request,'service.html')
+def splum(request):
+    return render(request,'plumbingsam.html')
+def userreg(request):
+    return render(request,'userreg.html')
+def sreg(request):
+    return render(request,'servicerreg.html')
+def profile(request):
+    return render(request,'userprofile.html')
+def support(request):
+    return render(request,'support.html')
+def offer(request):
+    return render(request,'offer.html')

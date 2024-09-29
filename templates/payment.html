@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            background: #e0e0e0;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .tab:hover {
+            background: #d0d0d0;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .card-images {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .card-images img {
+            width: 100px;
+            margin: 0 10px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .tabs {
+                flex-direction: column;
+            }
+
+            .tab {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Payment Form</h1>
+        <div class="tabs">
+            <div class="tab" onclick="showTab('credit-card')">Credit Card</div>
+            <div class="tab" onclick="showTab('debit-card')">Debit Card</div>
+            <div class="tab" onclick="showTab('upi')">UPI</div>
+        </div>
+
+        <div id="credit-card" class="tab-content">
+            <h2>Credit Card Info</h2>
+            <div class="card-images">
+                <img src="path/to/credit-card-image.png" alt="Credit Card Image">
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="credit-name">Name on Card</label>
+                    <input type="text" id="credit-name" name="credit-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="credit-card-number">Card Number</label>
+                    <input type="text" id="credit-card-number" name="credit-card-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="credit-expiry">Expiration (MM/YYYY)</label>
+                    <input type="text" id="credit-expiry" name="credit-expiry" placeholder="MM/YYYY" required>
+                </div>
+                <div class="form-group">
+                    <label for="credit-cvv">CVV Number</label>
+                    <input type="text" id="credit-cvv" name="credit-cvv" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+
+        <div id="debit-card" class="tab-content">
+            <h2>Debit Card Info</h2>
+            <div class="card-images">
+                <img src="path/to/debit-card-image.png" alt="Debit Card Image">
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="debit-name">Name on Card</label>
+                    <input type="text" id="debit-name" name="debit-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="debit-card-number">Card Number</label>
+                    <input type="text" id="debit-card-number" name="debit-card-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="debit-expiry">Expiration (MM/YYYY)</label>
+                    <input type="text" id="debit-expiry" name="debit-expiry" placeholder="MM/YYYY" required>
+                </div>
+                <div class="form-group">
+                    <label for="debit-cvv">CVV Number</label>
+                    <input type="text" id="debit-cvv" name="debit-cvv" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+
+        <div id="upi" class="tab-content">
+            <h2>UPI Information</h2>
+            <form>
+                <div class="form-group">
+                    <label for="upi-id">UPI ID</label>
+                    <input type="text" id="upi-id" name="upi-id" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            var tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+            var activeTab = document.getElementById(tabId);
+            activeTab.classList.add('active');
+        }
+
+        // Show the first tab by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showTab('credit-card');
+        });
+    </script>
+</body>
+</html>

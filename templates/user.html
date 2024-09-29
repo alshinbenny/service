@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Booking App - Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #1e88e5;
+            color: #fff;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: orange;
+        }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px;
+            transition: all 0.3s ease;
+        }
+
+        /* Responsive Navigation */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: -100%;
+                background-color: #333;
+                transition: left 0.3s ease;
+            }
+
+            .nav-links li {
+                text-align: center;
+                margin: 20px 0;
+            }
+
+            .nav-links.nav-active {
+                left: 0;
+            }
+
+            .burger {
+                display: flex;
+            }
+        }
+
+        /* Home Section with Background Image */
+        .home-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url('static/images/ac.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Overlay to darken the background image */
+        .home-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .home-section .content {
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .home-section h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .home-section p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .home-section .cta {
+            padding: 10px 30px;
+            font-size: 18px;
+            background-color: #1e88e5;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .home-section .cta:hover {
+            background-color:#ff4500;
+            color: #fff;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 60px 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .services-section h2 {
+            margin-bottom: 40px;
+            font-size: 32px;
+        }
+
+        .service-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            animation: fadeIn 1s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .card h3 {
+            margin: 15px 0;
+            font-size: 24px;
+        }
+
+        .card p {
+            font-size: 16px;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">ServiceApp</div>
+        <ul class="nav-links">
+            <li><a href="home">Home</a></li>
+            <li><a href="service">Services</a></li>
+            <li><a href="booking">Bookings</a></li>
+            <li><a href="profile">Profile</a></li>
+            <li><a href="cpassword">Change Password</a></li>
+            <li><a href="support">Support</a></li>
+            <li><a href="offer">Offers</a></li>
+            <li><a href="tutorial">Tutorial</a></li>
+            <li><a href="home">Logout</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <section id="home" class="home-section">
+        <div class="content">
+            <h1>Welcome to ServiceApp</h1>
+            <p>Book your desired services with ease and convenience.</p>
+            <button class="cta">Book Now</button>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <div class="card">
+                <img src="static/images/mec.jpeg" alt="Cleaning Service">
+                <h3>Mechanic Service</h3>
+                <p>Book top-rated cleaning services in your area.</p>
+            </div>
+            <div class="card">
+                <img src="static/images/plumber.jpg" alt="Plumbing Service">
+                <h3>Plumbing Service</h3>
+                <p>Get expert plumbing services at affordable rates.</p>
+            </div>
+            <div class="card">
+                <img src="static/images/electric.jpg" alt="Electrical Service">
+                <h3>Electrical Service</h3>
+                <p>Hire certified electricians for your needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+
+            // Burger Animation
+            burger.classList.toggle('toggle');
+        });
+    </script>
+</body>
+</html>
